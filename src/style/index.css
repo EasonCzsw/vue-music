@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a:active {
+    color: #000!important;
+}
+/* header */
+header {
+    width: 100%;
+}
+header ul {
+    list-style: none;
+}
+header ul a {
+    color: #9e9e9e;
+}
+header ul li {
+    display: inline-block;
+    width: 20%;
+    height: 48px;
+    line-height: 48px;
+}
+.headerIcon a {
+    color: black;
+}
+
+.li-active {
+    font-size: 18px;
+    color: black;
+}
+
+/* menu */
+.menu {
+    position: absolute;
+    z-index: 100;
+    margin-left: -10px;
+    width: 80%;
+    height: 1000px;
+    background-color: pink;
+}
+
+/* main */
+main {
+    height: 1000px;
+    width: 100%;
+}
