@@ -1,9 +1,25 @@
 * {
     margin: 0;
     padding: 0;
+    touch-action: pan-y;
+}
+ul {
+    list-style: none;
+    margin: 0 auto;
 }
 a:active {
     color: #000!important;
+}
+.clearfix:after {
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+.clearfix {
+    zoom: 1;
 }
 /* header */
 header {
@@ -32,16 +48,512 @@ header ul li {
 
 /* menu */
 .menu {
-    position: absolute;
+    position: fixed;
+    height: 100%;
     z-index: 100;
     margin-left: -10px;
-    width: 80%;
-    height: 1000px;
-    background-color: pink;
+    width: 90%;
+    overflow-y: scroll;
+}
+.menu_top {
+    width: 100%;
+    height: 26%;
+    padding-top: 35px;
+    margin-bottom: -10px;
+    background-image: url('../assets/Me_img3.jpg'); 
+}
+.menu_card {
+    width: 90%;
+    margin-left: 7%;
+    text-align: left;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(115, 115, 115);
+}
+.menu_vip {
+    float: right;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    margin-top: 30px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 20px;
+    color: rgb(115, 115, 115);
+    background: linear-gradient(to right, white, #daaa73);
+}
+.menu_card_bottom {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(107, 106, 106);
+}
+.menu_card_bottom h5 {
+    display: inline-block;
+    color: #daaa73;
+    padding-top: 5px;
+    line-height: 15px;
+}
+.menu_card_bottom h5 p {
+    color: white;
+    margin-left: 10px;
+    font-size: 10px;
+}
+.menu_card_bottom_span {
+    float: right;
+    margin-right: 20px;
+    color: white;
+}
+.menu_card_bottom_span img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.menu_card_bottom_span span {
+    position: fixed;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+.menu_main {
+    width: 100%;
+    height: 100%;
+    background-color: white; 
+    border-top-left-radius: 30px;
+    border-top-right-radius: 20px;
+}
+.menu_user {
+    width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.menu_main .menu_user img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+}
+.DL {
+    float: left;
+    margin-left: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+.QD {
+    float: right;
+    width: 80px;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    background-color: red;
+}
+.QD a {
+    color: white;
+}
+.mui-icon-extra {
+    font-size: 18px!important;
+    color: white;
+    margin-top: 3px;
 }
 
+.menu_ico {
+    width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.menu_ico ul {
+    display: flex;
+}
+.menu_ico ul li {
+    float: left;
+    flex: 1;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-right: 10px;
+    line-height: 60px;
+    border: 1px solid #9e9e9e;
+    border-radius: 50%;
+}
+.menu_ico ul li a {
+    color: black;
+}
+.menu_ico ul li p {
+    height: 20px;
+    line-height: 20px;
+    color: black;
+    font-weight: lighter;
+}
+.menu_ul {
+    width: 100%;
+    height: 88%;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.menu_ul1 {
+    float: left;
+    text-align: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.menu_ul1 li {
+    height: 40px;
+    line-height: 40px;
+}
+.menu_ul1 li a {
+    color: black;
+    font-weight: lighter;
+}
+.menu_ul2 {
+    float: left;
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.menu_ul2 li {
+    height: 40px;
+    line-height: 40px;
+}
+.menu_ul2 li a {
+    color: black;
+    font-weight: lighter;
+}
+.menu_bottom {
+    position: fixed;
+    top: 90%;
+    width: 87%;
+    height: 10%;
+    margin-left: 10px;
+    padding-left: 10px;
+    background-color:white;
+}
+.menu_bottom ul {
+    display: flex;
+}
+.menu_bottom ul li {
+    flex: 1;
+    float: left;
+    height: 80px;
+    line-height: 80px;
+}
+.menu_bottom ul li a {
+    color: #9e9e9e;
+}
+.menu_bottom .mui-icon-extra {
+    color: #9e9e9e;
+}
 /* main */
 main {
-    height: 1000px;
     width: 100%;
+}
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #eee;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    z-index: 99;
+}
+
+/* find */
+/* 轮播图 */
+.find {
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+.mint-swipe {
+    width: 100%;
+    height: 150px!important;
+    background-color: white;
+}
+.mint-swipe-item img {
+    width: 98%;
+    height: 90%;
+    margin-top: 9px;
+    border-radius: 8px;
+}
+
+/* 九宫格 */
+.mui-table-view {
+    background-color: #fff!important;
+    border: none!important;
+}
+.mui-media-body {
+    font-size: 13px!important;
+}
+.mui-grid-view.mui-grid-9 .mui-media {
+    width: 20%;
+    padding: 0!important;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell {
+    border: none!important;
+    width: 25%;
+}
+.tabImg {
+    width: 50%;
+}
+
+/* 歌单1样式 */
+
+
+.mui-content {
+    background-color: #fff!important;
+    margin-bottom: 20px;
+}
+.mui-content-p1 {
+    font-size: 13px;
+    text-align: left;
+    margin: 0;
+    margin-left: 10px;
+}
+.mui-content-p2 {
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: -20px;
+    color: black;
+}
+.mui-content-btn {
+    float: right;
+    margin-bottom: 10px!important;
+    margin-right: 10px;
+    border-radius: 20px!important;
+    font-size: 10px!important;
+    padding: 5px!important;
+}
+.mui-content > div {
+    position: relative;
+}
+.mui-control-item1 {
+    height: 100px;
+    padding: 0 5px!important;
+}
+.mui-control-item1 p {
+    position: absolute;
+    margin-top: -15px;
+}
+.mui-control-item img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+.mui-scoll-f {
+    overflow: hidden;
+}
+.mui-scoll {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.mui-scoll ul {
+    width: 300%;
+}
+.mui-scoll ul li {
+    height: 130px;
+}
+.mui-scoll ul li a {
+    width: 100px;
+    height: 100px;
+    padding: 0 10px;
+    text-align: left;
+}
+.mui-scoll ul li a img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.mui-scoll ul li a p {
+    margin-left: 10px;
+    width: 100px;
+    overflow: hidden;
+    white-space: normal;
+}
+
+/* 歌单2样式 */
+.sliderSegmentedControl2 {
+    height: 220px!important;
+}
+.mui-control-item2 {
+    display: inline-grid!important;
+    text-align: left!important;
+    padding: 0 20px!important;
+    width: 330px!important;
+}
+.TJimg1 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+.TJimgSpan {
+    display: inline;
+    position: absolute;
+}
+.TJimgSpan span {
+    display: block;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+}
+.TJimgSpan em {
+    margin-left: 5px;
+    font-style: normal;
+    font-size: 14px;
+    color: #9e9e9e;
+}
+.TJimgSpan > span >.em {
+    margin-right: 5px;
+    color: red;
+    font-size: 3px;
+    border: 1px solid red;
+}
+.TJimgMic {
+    float: right;
+    margin: 10px 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* border: 1px solid #9e9e9e; */
+}
+.TJimgMic img {
+    width: 30px;
+    height: 30px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+    color: black!important;
+}
+
+/* me */
+/* me_Top */
+.userImg {
+    float: left;
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.userImg img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.userText {
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 40px;
+    height: 30px;
+    color: white;
+    text-align: left;
+}
+.userText div{
+    height: 20px;
+    line-height: 20px;
+}
+.userBr {
+    display: block;
+}
+.userSty {
+    border-radius: 5px;
+    color: gainsboro;
+    background: gray;
+}
+.userVip {
+    float: right;
+    margin: 60px 10px 20px 10px;
+    line-height: 60px;
+    height: 60px;
+    color: gray;
+    font-size: 12px;
+}
+
+.userBtn {
+    display: flex;
+    width: 100%;
+}
+.userBtn li {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+}
+.userBtn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.userBtn p {
+    color: black;
+    font-size: 12px;
+}
+
+/* me_Main */
+.me_Top {
+    width: 100%;
+    height: 240px;
+    background-image: url('../assets/Me_img4.jpg');
+    background-size: 100% 100%;
+}
+.me_Main {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.me_Main .mui-contentA {
+    background-color:transparent!important;
+}
+.mui-myMusic {
+    height: 100px;
+    border-radius: 10%;
+    background-image: url('../assets/user_img.jpg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.mui-myMusic .center {
+    margin-top: 10px;
+    height: 20px;
+    text-align: center;
+    color: white;
+}
+/* myMusic myHistory createList */
+.myMusic, .myHistory, .createList {
+    display: block;
+    width: 100%;
+    height: 180px;
+    padding: 20px;
+}
+.myMusic h4,.myHistory h4, .createList h4 {
+    float: left;
+    margin-bottom: 10px;
+}
+
+/* YC */
+.YC_tab li {
+    display: inline-block;
+    width: 90px;
+} 
+
+.YC_main {
+    background-color: rgb(241, 238, 238);
+}
+
+/* video */
+.video ul {
+    overflow: hidden;
+}
+.video ul li {
+    float: left;
+    padding: 0 9px;
+}
+.video ul li a {
+    color: #9e9e9e;
+}
+.video ul .li-active {
+    color: black;
 }

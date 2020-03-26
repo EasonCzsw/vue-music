@@ -11,8 +11,12 @@ Vue.use(VueRouter);
 import resource from "vue-resource";
 Vue.use(resource);
 
-// inde.css
+// index.css
 import "../src/style/index.css";
+
+// axios
+import axios from "axios";
+Vue.prototype.$ajax = axios;
 
 // mint-ui
 import { Navbar, TabItem, Swipe, SwipeItem } from "mint-ui";
